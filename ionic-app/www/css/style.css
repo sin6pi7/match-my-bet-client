@@ -1,4 +1,30 @@
 /* Empty. Add your own CSS if you like */
+
+.title {
+	font-family: 'Bree Serif', serif;
+	font-size: 40px;
+}
+
+.finish {
+	font-size: 25px;
+	text-align: center;
+	padding: 6px;	
+}
+
+.success {
+	color: green;
+}
+
+.fail {
+	text-align: center;
+}
+
+img.photo {
+	margin: 0 auto;
+	display: block;
+
+}
+
 img {
 	max-width: 100%;
 }
