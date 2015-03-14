@@ -1,1 +1,21 @@
 /* Empty. Add your own CSS if you like */
+
+.finish {
+	font-size: 25px;
+	text-align: center;
+	padding: 6px;	
+}
+
+.success {
+	color: green;
+}
+
+.fail {
+	text-align: center;
+}
+
+img.photo {
+	margin: 0 auto;
+	display: block;
+
+}

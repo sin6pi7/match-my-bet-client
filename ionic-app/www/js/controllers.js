@@ -20,5 +20,22 @@ angular.module('starter.controllers',[])
         } 
     });
 
+    $scope.doMatch = function() {
+        console.log('dsd');
+        $state.go('match'); // temporary
+    };
+
     socket.emit('join', USER.name);
-}]);
+}])
+.controller('MatchController',
+    ['$scope', 'USER', 'ANOTHER_USER', '$state', function($scope, USER, ANOTHER_USER, $state) {
+        $scope.anotherUser = ANOTHER_USER;
+
+
+        $scope.doSomething = function() {
+
+        };
+        $scope.tryAgain = function() {
+            $state.go('home');
+        };
+    }]);

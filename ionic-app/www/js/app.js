@@ -28,5 +28,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             url:'/judge',
             controller:'JudgeController',
             templateUrl:'views/judge.html'
+        }).state('match', {
+            url: '/match',
+            controller: 'MatchController',
+            templateUrl: 'views/match.html'
         });
 }]);
