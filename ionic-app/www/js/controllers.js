@@ -23,7 +23,7 @@ angular.module('starter.controllers',[])
     };
 
     socket.on('paired', function (data) {
-    	if (data.auctions.length > 0) {
+        if (data.auctions.length > 0) {
             $scope.$apply(function() {
                 $scope.auctions = data.auctions;
                 $scope.auction = $scope.auctions[index];
@@ -32,11 +32,23 @@ angular.module('starter.controllers',[])
         }
     });
 
+    socket.emit('join', USER.name);
+
     $scope.nextAuction = function(btn) {
         result += countResult(btn, index);
         if (index === ($scope.auctions.length - 1)) {
+            $ionicLoading.show({
+                template: 'Counting results...'
+            })
+            socket.on('finish', function (data) {
+                if (data.matched) {
+                    ANOTHER_USER.name = data.name;
+                }
+                $ionicLoading.hide();
+                socket.disconnect();
+                $state.go('match');
+            })
             socket.emit('results', result);
-            socket.disconnect();
             return;
         }
         $scope.auction = $scope.auctions[++index];
