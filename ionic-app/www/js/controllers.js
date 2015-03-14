@@ -73,7 +73,6 @@ angular.module('starter.controllers',[])
                 if (data.matched) {
                     ANOTHER_USER.name = data.username;
                     ANOTHER_USER.image = data.image;
-                    $scope.anotherUser = ANOTHER_USER;
                 }
                 $ionicLoading.hide();
                 socket.disconnect();
@@ -92,5 +91,8 @@ angular.module('starter.controllers',[])
 }])
 .controller('MatchController',
     ['$scope', 'ANOTHER_USER', '$state', function($scope, ANOTHER_USER, $state) {
-        $scope.anotherUser = ANOTHER_USER;
+        $scope.anotherUser = {
+            name: ANOTHER_USER.name,
+            image: ANOTHER_USER.image
+        }
     }]);
