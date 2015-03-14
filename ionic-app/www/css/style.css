@@ -1,5 +1,10 @@
 /* Empty. Add your own CSS if you like */
 
+.title {
+	font-family: 'Bree Serif', serif;
+	font-size: 40px;
+}
+
 .finish {
 	font-size: 25px;
 	text-align: center;
