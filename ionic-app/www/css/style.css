@@ -48,25 +48,30 @@ img {
 .button-start {
 	z-index: 1;
 }
-.item {
+#judge-view .item {
+	top: 50px;
 	text-align: center;
+	border: none;
 }
 .item h2 {
+	margin-top: 40px;
+	font-size: 1.2em;
 	white-space: normal;
 	min-height: 5em;
-	line-height: 2.5em;
+	line-height: 1.7em;
 }
 .happy-shopper {
 	position: absolute;
 	bottom: 0;
 }
 #home-view .content {
-	top: 40%;
+	top: 17%;
 	width: 80%;
 	margin: auto;
 }
 .logo {
-	position: absolute;
-	min-width: 100%;
-	top: -40px;
+	max-width: 200px;
+	display: block;
+	margin: auto;
+	margin-top: 90px;
 }
