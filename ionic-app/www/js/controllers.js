@@ -4,6 +4,7 @@ angular.module('starter.controllers',[])
     $scope.user = {};
     $scope.start = function(){
         USER.name = $scope.user.name;
+        USER.image = "http://www.digibuzzme.com/wp-content/uploads/2012/11/error-404-road-not-found.jpg";
         $state.go('judge');
     }
 }])
@@ -40,20 +41,22 @@ angular.module('starter.controllers',[])
         if (index === ($scope.auctions.length - 1)) {
             $ionicLoading.show({
                 template: 'Counting results...'
-            })
+            });
             socket.on('finish', function (data) {
                 if (data.matched) {
-                    ANOTHER_USER.name = data.name;
+                    ANOTHER_USER.name = data.username;
+                    ANOTHER_USER.image = data.image;
+                    $scope.anotherUser = ANOTHER_USER;
                 }
                 $ionicLoading.hide();
                 socket.disconnect();
                 $state.go('match');
-            })
+            });
             socket.emit('results', result);
             return;
         }
         $scope.auction = $scope.auctions[++index];
-    }
+    };
 
     var countResult = function(btn, index) {
         var yes = (btn === 'YES') ? 1 : 0;
