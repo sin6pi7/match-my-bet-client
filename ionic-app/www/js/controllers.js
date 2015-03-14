@@ -3,7 +3,7 @@ angular.module('starter.controllers',[])
 	['$scope', 'USER', '$state', function($scope, USER, $state){
     $scope.user = {};
 
-    $scope.fbLogin = function() {
+    $scope.start = function() {
         openFB.login(
             function(response) {
                 if (response.status === 'connected') {
@@ -58,44 +58,36 @@ angular.module('starter.controllers',[])
         }
     });
 
-    socket.emit('join', USER.name);
+    socket.emit('join', USER);
 
     $scope.nextAuction = function(btn) {
         result += countResult(btn, index);
         if (index === ($scope.auctions.length - 1)) {
             $ionicLoading.show({
                 template: 'Counting results...'
-            })
+            });
             socket.on('finish', function (data) {
                 if (data.matched) {
-                    ANOTHER_USER.name = data.name;
+                    ANOTHER_USER.name = data.username;
+                    ANOTHER_USER.image = data.image;
+                    $scope.anotherUser = ANOTHER_USER;
                 }
                 $ionicLoading.hide();
                 socket.disconnect();
                 $state.go('match');
-            })
+            });
             socket.emit('results', result);
             return;
         }
         $scope.auction = $scope.auctions[++index];
-    }
+    };
 
     var countResult = function(btn, index) {
         var yes = (btn === 'YES') ? 1 : 0;
         return Math.pow(2, index) * yes;
     }
-    
-    socket.emit('join', USER.name);
 }])
 .controller('MatchController',
-    ['$scope', 'USER', 'ANOTHER_USER', '$state', function($scope, USER, ANOTHER_USER, $state) {
+    ['$scope', 'ANOTHER_USER', '$state', function($scope, ANOTHER_USER, $state) {
         $scope.anotherUser = ANOTHER_USER;
-
-
-        $scope.doSomething = function() {
-
-        };
-        $scope.tryAgain = function() {
-            $state.go('home');
-        };
     }]);

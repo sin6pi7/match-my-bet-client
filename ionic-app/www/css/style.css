@@ -28,9 +28,6 @@ img.photo {
 img {
 	max-width: 100%;
 }
-/*.scroll {
-	text-align: center;
-}*/
 .button-group {
   display: block;
   position: absolute;
@@ -48,6 +45,9 @@ img {
 	float: right;
 	margin-right: 20px;
 }
+.button-start {
+	z-index: 1;
+}
 .item {
 	text-align: center;
 }
@@ -55,4 +55,18 @@ img {
 	white-space: normal;
 	min-height: 5em;
 	line-height: 2.5em;
+}
+.happy-shopper {
+	position: absolute;
+	bottom: 0;
+}
+#home-view .content {
+	top: 40%;
+	width: 80%;
+	margin: auto;
+}
+.logo {
+	position: absolute;
+	min-width: 100%;
+	top: -40px;
 }
