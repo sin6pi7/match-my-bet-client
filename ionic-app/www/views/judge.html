@@ -1,21 +1,25 @@
-<ion-view title="MatchMyBet-judge" >
+<ion-view>
    <ion-content>
-    <!-- <ion-list>
-      <ion-item ng-repeat="auction in auctions">
-        {{auction.title}}
+    <ion-list>
+      <ion-item>
+        <h2 class="title">{{auction.title}}</h2>
         <img src="{{auction.image}}">
       </ion-item>
-    </ion-list> -->
-    <ion-slide-box does-continue="true">
-      <ion-slide>
-        <div class="box blue"><h1>BLUE</h1></div>
+    </ion-list>
+    <!-- <ion-slide-box does-continue="true">
+      <ion-slide-pager ng-click="console.log('siema')"></ion-slide-pager>
+      <ion-slide ng-repeat="auction in auctions">
+        <div class="box">
+          <img src="{{auction.image}}"/>
+        </div>
       </ion-slide>
-      <ion-slide>
-        <div class="box yellow"><h1>YELLOW</h1></div>
-      </ion-slide>
-      <ion-slide>
-        <div class="box pink"><h1>PINK</h1></div>
-      </ion-slide>
-    </ion-slide-box>
+    </ion-slide-box> -->
+<!--     <h1 class="title">{{auction.title}}</h1>
+    <img src="{{auction.title}}">
+ -->    
   </ion-content>
+  <div class="button-group">
+    <button class="button button-balanced button-yes" ng-click="nextAuction('YES')">Tak</button>
+<button class="button button-assertive button-no" ng-click="nextAuction('NO')">Nie</button>
+  </div>
 </ion-view>
