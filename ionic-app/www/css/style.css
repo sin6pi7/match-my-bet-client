@@ -7,8 +7,10 @@
 
 .finish {
 	font-size: 25px;
+  	line-height: 30px;
 	text-align: center;
 	padding: 6px;	
+  	margin-bottom: 17px;
 }
 
 .success {
@@ -75,12 +77,13 @@ img {
 	margin: auto;
 	margin-top: 90px;
 }
-.finish.success {
+.finish {
 	margin-bottom: 20px;
 }
 .chat-anchor {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-top: 10px;
   text-decoration: underline;
   font-size: 26px;
   color: rgb(247, 179, 33);
@@ -92,4 +95,17 @@ img {
 }
 #match-view .scroll{
 	text-align: center;
+}
+.img-circle-container {
+  border-radius: 64%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border: 3px solid black;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.match-message-container {
+	margin-top: 150px;
 }

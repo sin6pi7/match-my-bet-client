@@ -1,8 +1,11 @@
 <ion-view title="MatchMyBet-match" id="match-view">
     <ion-content>
-        <div ng-show="anotherUser != null">
-            <div class="finish success">You and <strong>{{ anotherUser.name }}</strong> have a lot in common!</div>
-            <div><img class="photo" src="{{ anotherUser.image }}"></div>
+        <div ng-show="anotherUser != null" class="match-message-container">
+            <div class="img-circle-container">
+              <img class="photo" src="{{ anotherUser.image }}">
+            </div>
+            <div class="finish">You and <strong>{{anotherUser.name}}</strong><br> have a lot in common!</div>
+            <div></div>
             <a ng-click="doSomething()" class="chat-anchor"><strong>Chat</strong></a>
             <p class="maybe">maybe?</p>
         </div>
