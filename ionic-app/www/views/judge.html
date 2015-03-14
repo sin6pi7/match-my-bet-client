@@ -5,22 +5,11 @@
         <img src="{{auction.image}}">
         <h2 class="title">{{auction.title}}</h2>
       </ion-item>
-
     </ion-list>
-    <!-- <ion-slide-box does-continue="true">
-      <ion-slide-pager ng-click="console.log('siema')"></ion-slide-pager>
-      <ion-slide ng-repeat="auction in auctions">
-        <div class="box">
-          <img src="{{auction.image}}"/>
-        </div>
-      </ion-slide>
-    </ion-slide-box> -->
-<!--     <h1 class="title">{{auction.title}}</h1>
-    <img src="{{auction.title}}">
- -->    
   </ion-content>
   <div class="button-group">
-    <button class="button button-balanced button-yes" ng-click="nextAuction('YES')">Tak</button>
-<button class="button button-assertive button-no" ng-click="nextAuction('NO')">Nie</button>
+    <p class="would-you">Would You buy it?</p>
+    <button class="button button-balanced button-yes" ng-click="nextAuction('YES')">Yes</button>
+<button class="button button-assertive button-no" ng-click="nextAuction('NO')">No</button>
   </div>
 </ion-view>

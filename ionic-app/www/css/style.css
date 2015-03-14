@@ -33,7 +33,7 @@ img {
 .button-group {
   display: block;
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   width: 100%;
 }
 .button {
@@ -41,11 +41,11 @@ img {
 }
 .button-yes {
 	float: left;
-	margin-left: 20px;
+	margin-left: 40px;
 }
 .button-no {
 	float: right;
-	margin-right: 20px;
+	margin-right: 40px;
 }
 .button-start {
 	z-index: 1;
@@ -112,4 +112,9 @@ img {
 }
 .match-message-container {
 	margin-top: 150px;
+}
+.would-you {
+	text-align: center;
+	font-size: 26px;
+	font-weight: bold;
 }
