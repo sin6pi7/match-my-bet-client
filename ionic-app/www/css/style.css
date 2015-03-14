@@ -87,6 +87,7 @@ img {
   text-decoration: underline;
   font-size: 26px;
   color: rgb(247, 179, 33);
+  cursor: pointer;
 }
 .maybe {
 	font-size: 20px;

@@ -1,17 +1,21 @@
 <ion-view title="MatchMyBet-match" id="match-view">
     <ion-content>
-        <div ng-show="anotherUser != null" class="match-message-container">
+        <div ng-show="anotherUser.matched" class="match-message-container">
             <div class="img-circle-container">
               <img class="photo" src="{{ anotherUser.image }}">
             </div>
-            <div class="finish">You and <strong>{{anotherUser.name}}</strong><br> have a lot in common!</div>
+            <div class="finish">You and <strong>{{anotherUser.name}}</strong><br> did not really matchhave a lot in common!</div>
             <div></div>
             <a ng-click="doSomething()" class="chat-anchor"><strong>Chat</strong></a>
             <p class="maybe">maybe?</p>
         </div>
-        <div ng-show="anotherUser == null">
-            <div class="finish fail">Sorry! Not this time.</div>
-            <button class="button button-block button-assertive" ng-click="tryAgain()">Try again</button>
+        <div ng-show="!anotherUser.matched">
+            <div class="img-circle-container">
+              <img class="photo" src="{{ anotherUser.image }}">
+            </div>
+            <div class="finish">You and <strong>{{anotherUser.name}}</strong><br> did not match, but don't worry:<br>there are more than 3 items in the world.</div>
+            <div></div>
+            <a ng-click="tryAgain()" class="chat-anchor" ><strong>Try again?</strong></a>
         </div>
     </ion-content>
 </ion-view>

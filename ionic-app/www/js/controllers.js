@@ -70,10 +70,9 @@ angular.module('starter.controllers',[])
                 template: 'Counting results...'
             });
             socket.on('finish', function (data) {
-                if (data.matched) {
-                    ANOTHER_USER.name = data.username;
-                    ANOTHER_USER.image = data.image;
-                }
+                ANOTHER_USER.name = data.username;
+                ANOTHER_USER.image = data.image;
+                ANOTHER_USER.matched = data.matched;
                 $ionicLoading.hide();
                 socket.disconnect();
                 $state.go('match');
@@ -91,8 +90,8 @@ angular.module('starter.controllers',[])
 }])
 .controller('MatchController',
     ['$scope', 'ANOTHER_USER', '$state', function($scope, ANOTHER_USER, $state) {
-        $scope.anotherUser = {
-            name: ANOTHER_USER.name,
-            image: ANOTHER_USER.image
+        $scope.anotherUser = ANOTHER_USER;
+        $scope.tryAgain = function() {
+            $state.go('home');
         }
     }]);
