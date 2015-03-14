@@ -17,6 +17,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
     }
     $state.go('home');
   });
+  $state.go('home');
 })
 
 .config(['$stateProvider', function($stateProvider){
