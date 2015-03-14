@@ -1,8 +1,13 @@
 <ion-view title="MatchMyBet" id="home-view">
     <img src="img/logo.png" class="logo">
     <div class="content">
-
-      <button class="button button-block button-energized button-start" ng-click="start()">Start! (FB Log in)</button>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Select nickname" ng-model="user.name">
+        </label>
+      </div>
+      <button class="button button-block button-energized button-start" ng-click="start()">Start</button>
+      <!-- <button class="button button-block button-energized button-start" ng-click="start()">Start!</button> -->
     </div>
     <img src="img/happy-shopper.jpg" class="happy-shopper">
   </div>

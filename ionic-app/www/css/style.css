@@ -75,3 +75,21 @@ img {
 	margin: auto;
 	margin-top: 90px;
 }
+.finish.success {
+	margin-bottom: 20px;
+}
+.chat-anchor {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: underline;
+  font-size: 26px;
+  color: rgb(247, 179, 33);
+}
+.maybe {
+	font-size: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#match-view .scroll{
+	text-align: center;
+}

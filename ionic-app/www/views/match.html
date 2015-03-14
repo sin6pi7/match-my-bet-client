@@ -1,12 +1,10 @@
-<ion-view title="MatchMyBet-match">
+<ion-view title="MatchMyBet-match" id="match-view">
     <ion-content>
         <div ng-show="anotherUser != null">
             <div class="finish success">You and <strong>{{ anotherUser.name }}</strong> have a lot in common!</div>
             <div><img class="photo" src="{{ anotherUser.image }}"></div>
-            <p>
-                <button class="button button-block button-positive" ng-click="doSomething()">Chat</button>
-                maybe?
-            </p>
+            <a ng-click="doSomething()" class="chat-anchor"><strong>Chat</strong></a>
+            <p class="maybe">maybe?</p>
         </div>
         <div ng-show="anotherUser == null">
             <div class="finish fail">Sorry! Not this time.</div>
