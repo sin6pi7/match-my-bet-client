@@ -1,7 +1,7 @@
 <ion-view title="MatchMyBet-match" >
    <ion-content>
    <div ng-show="anotherUser != null">
-     <div class="finish success">Your {{ anotherUser.numberOfChoices }} preferences are the same as for <strong>{{ anotherUser.name }}</strong>. </div>
+     <div class="finish success">Your {{ anotherUser.name }} preferences are the same as for <strong>{{ anotherUser.name }}</strong>. </div>
      <div><img class="photo" src="{{ anotherUser.photoUrl }}"></div>
       <button class="button button-block button-positive" ng-click="doSomething()">Talk with this person!</button>
     </div>

@@ -33,7 +33,7 @@ angular.module('starter.controllers',[])
         }
     });
 
-    socket.emit('join', USER.name);
+    socket.emit('join', USER);
 
     $scope.nextAuction = function(btn) {
         result += countResult(btn, index);
@@ -59,18 +59,8 @@ angular.module('starter.controllers',[])
         var yes = (btn === 'YES') ? 1 : 0;
         return Math.pow(2, index) * yes;
     }
-    
-    socket.emit('join', USER.name);
 }])
 .controller('MatchController',
-    ['$scope', 'USER', 'ANOTHER_USER', '$state', function($scope, USER, ANOTHER_USER, $state) {
+    ['$scope', 'ANOTHER_USER', '$state', function($scope, ANOTHER_USER, $state) {
         $scope.anotherUser = ANOTHER_USER;
-
-
-        $scope.doSomething = function() {
-
-        };
-        $scope.tryAgain = function() {
-            $state.go('home');
-        };
     }]);
