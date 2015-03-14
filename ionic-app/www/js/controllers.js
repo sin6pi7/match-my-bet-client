@@ -8,7 +8,8 @@ angular.module('starter.controllers',[])
     }
 }])
 .controller('JudgeController',
-	['$scope', 'USER', 'SOCKET_URL', '$state', '$ionicLoading', function($scope, USER, SOCKET_URL, $state, $ionicLoading){
+	['$scope', 'USER', 'ANOTHER_USER', 'SOCKET_URL', '$state', '$ionicLoading', 
+    function($scope, USER, ANOTHER_USER, SOCKET_URL, $state, $ionicLoading){
     var socket = io(SOCKET_URL),
         index = 0,
         result = 0;
